@@ -1,0 +1,53 @@
+doctype html
+html
+   head
+      title = "Task Details" 
+   body
+      div
+         h2 View/Update Task Details
+      a(href = '/home') Return to task list
+      br
+      br
+      form(action = "/viewUpdate/", method = "POST")
+         input(type = "hidden" name = "itemId" value = currentTask._id)
+         table(style='width:100%', border='1')
+            tr
+               th Field
+               th Current Value
+               th Updated Value
+               th Include Updates?
+            tr
+               td Name
+               td #{currentTask.name}
+               td
+                  input(name = "updatedName" )
+               td 
+                  input(type = "checkbox" name = "selectName" id = "selectNameID")
+
+            tr
+               td Target Completion Date
+               td #{currentTask.targetCompletionDate}
+               td
+                  input(type='date' name = "updatedTargetCompletion")
+               td 
+                  input(type = "checkbox" name = "selectTargetCompletion")
+
+            tr
+               td Completion Date
+               td #{currentTask.completionDate}
+               td
+                  input(type='date' name = "updatedCompletion")
+               td 
+                  input(type = "checkbox" name = "selectCompletion") 
+
+            tr
+               td Description
+               td #{currentTask.description}
+               td
+                  input(name = "updatedDescription")
+               td 
+                  input(type = "checkbox" name = "selectDescription") 
+
+        
+         br
+         button(type = "submit") Update selected fields

@@ -1,0 +1,18 @@
+html
+   head
+      title Task
+   body
+      h2 Task Insertion Status
+      if(type == "error")
+         h3(style = "color:red") #{message}
+         a(href = previous) Click here to try again
+      else
+         h3 New task added:
+         
+         h4 Name: #{task.name}
+         h4 Description: #{task.description} 
+         h4 Target Completion Date: #{task.targetCompletionDate} 
+      
+         a(href = previous) Click here to add another task
+      br
+      a(href = home) Click here to return to home page

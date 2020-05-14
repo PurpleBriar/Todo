@@ -1,0 +1,30 @@
+doctype html
+html
+   head
+      title = "Task List"
+   body
+      div
+         h2 My Task List
+      a(href = '/create/newtask') Click here to add another task
+      br
+      br
+      table(style='width:100%', border='1')
+         tr
+            th Task Name
+            th Details
+            th Target Completion Date
+            th Status
+            th Delete?
+         each n in allTasks
+            tr
+               td #{n.name} 
+               td 
+                  a(href = '/viewUpdate/'+n._id) View/Update task details
+               td #{n.targetCompletionDate}
+               if !n.completionDate || n.completionDate > Date.now()
+                  td Pending
+               else
+                  td Complete        
+               td 
+                  a(href = '/home/remove/'+n._id) Delete
+                

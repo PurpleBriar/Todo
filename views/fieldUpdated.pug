@@ -1,0 +1,26 @@
+html
+   head
+      title Task Update Notification
+   body
+      h2 Task updated
+      
+      h3 Updated values:
+         
+      if (task.selectName == 'on') 
+         h4 Name: #{task.updatedName}
+      
+
+      if (task.selectDescription == 'on') 
+         h4 Description: #{task.updatedDescription} 
+      
+      
+      if (task.selectTargetCompletion == 'on') 
+         h4 Target Completion Date: #{task.updatedTargetCompletion}
+      
+      
+      if (task.selectCompletion == 'on') 
+         h4 Completion Date: #{task.updatedCompletion} 
+      
+      
+      br
+      a(href = home) Click here to return to home page
