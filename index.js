@@ -2,6 +2,8 @@ var bodyParser = require('body-parser')
 var express = require('express');
 var app = express();
 
+var port = process.env.PORT || 3000;
+
 var dataModel = require('./model.js');
 var routes = require('./routes.js');
 var newtask = require('./create.js');
@@ -18,4 +20,6 @@ app.use('/home', routes);
 app.use('/create', newtask);
 app.use('/viewUpdate', taskRecord);
 
-app.listen(3000);
+app.listen(port, function(){
+    console.log("app running");
+});

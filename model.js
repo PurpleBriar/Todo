@@ -1,5 +1,6 @@
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/my_db', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(process.env.MONGODB_URI || 
+    'mongodb://localhost/my_db', { useNewUrlParser: true, useUnifiedTopology: true });
 
 //Get the default connection
 var db = mongoose.connection;
